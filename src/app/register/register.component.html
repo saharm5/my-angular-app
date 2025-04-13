@@ -1,0 +1,26 @@
+<!-- register.component.html -->
+<div class="login-container">
+    <h2>بقالی</h2>
+    <div>
+        <h3>ورود یا ثبت‌نام</h3>
+        <p class="login-container-p">
+            برای ورود شماره موبایل خود را وارد کنید.
+        </p>
+    </div>
+
+    <form class="login-form" (submit)="handleSubmit($event)">
+        <div class="form-group-login">
+            <input [(ngModel)]="phone_number" name="phone" type="tel" placeholder="شماره تلفن" required />
+        </div>
+
+        <button class="button-login" [disabled]="isSubmitting" type="submit">
+            ثبت‌نام
+        </button>
+    </form>
+
+    <p class="disclaimer-login">
+        تایید شما به معنی پذیرش
+        <a href="#" class="ColorRoll-login"> قوانین و مقررات </a>
+        است.
+    </p>
+</div>

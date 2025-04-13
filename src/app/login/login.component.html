@@ -1,0 +1,26 @@
+<!-- C:\Users\Sanay\my-angular-app\src\app\login\login.component.html -->
+<div class="login-container">
+    <h2>بقالی</h2>
+    <div>
+        <h3>ورود</h3>
+        <p class="login-container-p">
+            برای ورود شماره موبایل خود را وارد کنید.
+        </p>
+    </div>
+    <form class="login-form" (submit)="handleSubmit($event)">
+        <div class="form-group-login">
+            <input [(ngModel)]="phone_number" name="phone" type="tel" placeholder="شماره تلفن" required />
+        </div>
+        <div class="form-group-login mb-2">
+            <input [(ngModel)]="password" name="password" type="password" placeholder="رمز ورود" required />
+        </div>
+        <button class="button-login" [disabled]="isSubmitting" type="submit">
+            ورود
+        </button>
+    </form>
+    <p class="disclaimer-login">
+        ورود شما به معنی پذیرش
+        <a href="#" class="ColorRoll-login">قوانین و مقررات</a>
+        است.
+    </p>
+</div>

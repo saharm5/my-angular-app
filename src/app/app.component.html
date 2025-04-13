@@ -1,0 +1,10 @@
+<!-- src/app/app.component.html -->
+
+<nav>
+  <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">خانه</a> |
+  <a routerLink="/login" routerLinkActive="active-link">ورود</a> |
+  <a routerLink="/signup" routerLinkActive="active-link">ثبت‌نام</a>|
+  <a routerLink="/register" routerLinkActive="active-link">رجیستر</a>
+</nav>
+
+<router-outlet></router-outlet>
