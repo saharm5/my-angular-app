@@ -13,7 +13,6 @@ const BASE_URL = "http://localhost:8081/";
 export class AuthService {
   constructor(private http: HttpClient) { }
 
-  // 🔸 متد عمومی برای ارسال POST
   private sendPostRequest(endpoint: string, formData: any, withAuth: boolean = false): Observable<any> {
     const url = `${BASE_URL}${endpoint}`;
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -40,7 +39,6 @@ export class AuthService {
     );
   }
 
-  // ✅ متدهای اختصاصی فقط صدا زدن متد مشترک
   verifyOtp(formData: any, withAuth: boolean = false): Observable<any> {
     return this.sendPostRequest('/api/auth/verify-otp/', formData, withAuth);
   }

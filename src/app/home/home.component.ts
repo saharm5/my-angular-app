@@ -1,4 +1,4 @@
-// src/app/home/home.component.ts
+// C:\Users\Sanay\my-angular-app\src\app\home\home.component.ts
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';

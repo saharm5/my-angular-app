@@ -1,4 +1,5 @@
 // C: \Users\Sanay\my - angular - app\src\app\register\register.component.ts
+
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +10,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'], 
+  styleUrls: ['./register.component.css'],
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule],
 })

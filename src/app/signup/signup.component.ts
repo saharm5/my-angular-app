@@ -1,4 +1,5 @@
-// src/app/signup/signup.component.ts
+// C:\Users\Sanay\my-angular-app\src\app\signup\signup.component.ts
+
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +12,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'] // ✅ اینجا اصلاح شد
+  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
   password = '';
