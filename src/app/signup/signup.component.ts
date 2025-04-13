@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../api/api.component';
+import { ApiService } from '../api/api.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -21,7 +21,7 @@ export class SignupComponent {
   isSubmitting = false;
   error = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   handleSubmit(event: Event) {
     event.preventDefault();
@@ -34,9 +34,8 @@ export class SignupComponent {
       otp: this.otp,
       password: this.password
     };
-
-    this.authService.verifyOtp(formData, false).subscribe({
-      next: (result) => {
+    this.apiService.verifyOtp(formData, false).subscribe({
+      next: (result: any) => {
         if (result?.access && result?.refresh) {
           localStorage.setItem('token', result.access);
           localStorage.setItem('refresh_token', result.refresh);

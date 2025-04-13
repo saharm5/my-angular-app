@@ -2,18 +2,13 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProductGrid2Component } from "../product-grid2/product-grid2.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
-  template: `
-    <h2>صفحه اصلی</h2>
-    <p>به اپلیکیشن خوش آمدید!</p>
-  `,
-  styles: [`
-    h2 { color: darkblue; }
-    p { font-size: 1.1rem; }
-  `]
+  imports: [CommonModule, ProductGrid2Component],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent { }

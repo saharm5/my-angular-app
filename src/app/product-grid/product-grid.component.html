@@ -1,0 +1,20 @@
+<div class="d-flex flex-row">
+<div *ngFor="let product of products" class="card">
+        <a [routerLink]="['/ProductDetails']" [queryParams]="{ id: product.id }" class="">
+            <span class="">
+                % {{ product.Discount }}
+            </span>
+            <img [src]="product.imageUrl || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs9gUXKwt2KErC_jWWlkZkGabxpeGchT-fyw&s'"
+                [alt]="product.title" class="" />
+        </a>
+        <div class="">
+            <h6 class="" title="{{ product.title }}">{{ product.title }}</h6>
+            <p class="">{{ product.price }} تومان</p>
+        </div>
+        <div class="">
+            <app-cart-button [quantity]="getQuantity(product.id)" [addcard]="product.addcard || ''"
+                (onAdd)="addition.emit(product.id)" (onReduce)="reduce.emit(product.id)">
+            </app-cart-button>
+        </div>
+    </div>
+</div>

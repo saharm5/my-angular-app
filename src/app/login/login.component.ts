@@ -1,10 +1,8 @@
-// // // C: \Users\Sanay\my - angular - app\src\app\login\login.component.ts
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../api/api.component';
+import { ApiService } from '../api/api.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -20,7 +18,7 @@ export class LoginComponent {
   isSubmitting = false;
   error = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   handleSubmit(event: Event) {
     event.preventDefault();
@@ -33,8 +31,8 @@ export class LoginComponent {
       password: this.password
     };
 
-    this.authService.loginWithPassword(formData, false).subscribe({
-      next: (result) => {
+    this.apiService.loginWithPassword(formData, false).subscribe({
+      next: (result: any) => {
         if (result?.access && result?.refresh) {
           localStorage.setItem('token', result.access);
           localStorage.setItem('refresh_token', result.refresh);

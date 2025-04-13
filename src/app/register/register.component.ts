@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../api/api.component';
+import { ApiService } from '../api/api.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class RegisterComponent {
   isSubmitting = false;
   error = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   handleSubmit(event: Event) {
     event.preventDefault();
@@ -31,8 +31,8 @@ export class RegisterComponent {
       phone_number: this.phone_number,
     };
 
-    this.authService.loginOrRegister(formData, false).subscribe({
-      next: (result) => {
+    this.apiService.loginOrRegister(formData, false).subscribe({
+      next: (result: any) => {
         if (result.isregister === 1) {
           alert("لطفا ثبت نام کنید");
           console.log("نتیجه ثبت نام یا ورود:", result);
