@@ -10,7 +10,8 @@ interface Product {
   quantity: number;
   id: number;
   product_name: string;
-  final_price: number;
+  final_price: number; 
+  main_price: number;
   description: string;
   rating: number;
   productImageSrc: { productImageSrc: string }[];
@@ -34,8 +35,9 @@ export class ProductGrid2Component implements OnInit {
         Discount: product.Discount,
         id: product.id,
         title: product.product_name,
-        price: product.final_price,
+        final_price: product.final_price,
         quantity: product.quantity,
+        main_price: product.main_price,
         addcard: null,
         imageUrl: product.productImageSrc[0]?.productImageSrc || '',
       }));

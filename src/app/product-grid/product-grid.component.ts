@@ -11,7 +11,8 @@ interface Product {
   id: number;
   imageUrl: string | null;
   title: string;
-  price: number;
+  final_price: number;
+  main_price: number;
 }
 
 @Component({

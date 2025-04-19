@@ -1,0 +1,9 @@
+body {
+    direction: rtl;
+    /* color: #133e87 !important; */
+}
+
+* {
+    font-family: Vazirmatn, sans-serif !important;
+    /* color: #133e87 !important; */
+}

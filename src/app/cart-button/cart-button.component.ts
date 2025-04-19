@@ -2,11 +2,16 @@
 
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AddToCart } from '../icons/add-to-cart.svg';
+import { plus } from '../icons/plus.svg';
+import { Minus } from '../icons/minus.svg';
+import { trash } from '../icons/trash.svg';
+
 
 @Component({
   selector: 'app-cart-button',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AddToCart, plus, Minus, trash],
   templateUrl: './cart-button.component.html',
   styleUrls: ['./cart-button.component.css']
 })
